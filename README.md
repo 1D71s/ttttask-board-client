@@ -14,7 +14,7 @@
 
 1. Клонируйте репозиторий:
     ```bash
-    git clone https://github.com/1D71s/ttttask-board-server.git
+    git clone https://github.com/1D71s/ttttask-board-client.git
     ```
 2. Перейдите в папку проекта:
     ```bash
