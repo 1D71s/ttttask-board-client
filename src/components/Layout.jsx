@@ -4,12 +4,11 @@ import useAuth from '../hooks/useAuth';
 export default function Layout({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const { handleLogout } = useAuth();
+  const { handleLogout, isLoggedIn } = useAuth();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
-  }, []);
+    setIsAuthenticated(isLoggedIn());
+  }, [isLoggedIn]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
@@ -17,7 +16,10 @@ export default function Layout({ children }) {
         <h1 className="text-xl font-bold">Task Manager</h1>
         {isAuthenticated && (
           <button
-            onClick={handleLogout}
+            onClick={() => {
+              handleLogout();
+              setIsAuthenticated(false); 
+            }}
             className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded"
           >
             Выйти

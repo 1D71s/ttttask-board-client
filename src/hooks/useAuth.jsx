@@ -45,7 +45,9 @@ function useAuth() {
     navigate("/");
   };
 
-  return { user, error, handleLogin, handleRegister, handleLogout };
+  const isLoggedIn = () => !!localStorage.getItem('token');
+
+  return { user, error, handleLogin, handleRegister, handleLogout, isLoggedIn };
 }
 
 export default useAuth;
