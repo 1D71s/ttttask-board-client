@@ -18,7 +18,7 @@
     ```
 2. Перейдите в папку проекта:
     ```bash
-    cd task-manager
+    cd ttttask-board-client
     ```
 3. Установите зависимости:
     ```bash
